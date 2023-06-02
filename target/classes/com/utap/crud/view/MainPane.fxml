@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.*?>
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
+            minWidth="-Infinity"
+            prefHeight="336.0" prefWidth="671.0" xmlns="http://javafx.com/javafx/17.0.2-ea"
+            fx:controller="com.utap.controller.MainController">
+    <children>
+        <VBox layoutX="26.0" layoutY="22.0" spacing="15.0">
+            <children>
+                <Label text="ID">
+                    <font>
+                        <Font size="14.0"/>
+                    </font>
+                </Label>
+                <Label text="Nombre">
+                    <font>
+                        <Font size="14.0"/>
+                    </font>
+                </Label>
+                <Label text="Apellido">
+                    <font>
+                        <Font size="14.0"/>
+                    </font>
+                </Label>
+                <Label text="Materia">
+                    <font>
+                        <Font size="14.0"/>
+                    </font>
+                </Label>
+                <Label text="Nota">
+                    <font>
+                        <Font size="14.0"/>
+                    </font>
+                </Label>
+            </children>
+        </VBox>
+        <VBox layoutX="87.0" layoutY="22.0" prefHeight="130.0" prefWidth="129.0" spacing="10.0">
+            <children>
+                <TextField fx:id="idField"/>
+                <TextField fx:id="nombreField"/>
+                <TextField fx:id="apellidoField"/>
+                <TextField fx:id="materiaField"/>
+                <TextField fx:id="notaField"/>
+
+            </children>
+        </VBox>
+        <HBox layoutX="26.0" layoutY="202.0" spacing="10.0">
+            <children>
+                <Button fx:id="insertButton" mnemonicParsing="false" onAction="#insertButton" prefHeight="30.0"
+                        prefWidth="60.0" text="Insert"/>
+                <Button fx:id="updateButton" mnemonicParsing="false" onAction="#updateButton" prefHeight="30.0"
+                        prefWidth="60.0" text="Update"/>
+                <Button fx:id="deleteButton" mnemonicParsing="false" onAction="#deleteButton" prefHeight="30.0"
+                        prefWidth="60.0" text="Delete"/>
+            </children>
+        </HBox>
+        <TableView fx:id="TableView" layoutX="238.0" layoutY="22.0" prefHeight="210.0" prefWidth="400.0">
+            <columns>
+                <TableColumn fx:id="idColumn" prefWidth="35.0" text="ID"/>
+                <TableColumn fx:id="nombreColumn" prefWidth="120.0" text="Nombre"/>
+                <TableColumn fx:id="apellidoColumn" prefWidth="120.0" text="Apellido"/>
+                <TableColumn fx:id="materiaColumn" prefWidth="60.0" text="Materia"/>
+                <TableColumn fx:id="notaColumn" prefWidth="60.0" text="Nota"/>
+            </columns>
+        </TableView>
+    </children>
+</AnchorPane>
