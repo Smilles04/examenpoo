@@ -1,14 +1,12 @@
 package com.utap.controller;
 
+import com.utap.library.materias;
 import com.utap.library.students;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Button;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 
 import java.net.URL;
@@ -16,11 +14,14 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 
 public class MainController implements Initializable {
 
+    @FXML
+    private ComboBox listarMaterias;
     @FXML
     private TextField idField;
 
@@ -62,12 +63,30 @@ public class MainController implements Initializable {
 
     @FXML
     private TableColumn<students, Integer> notaColumn;
+    private com.utap.library.materias materias;
 
     @FXML
     private void insertButton() {
+      int id_materia;
+        switch(listarMaterias.getValue().toString()) {
+            case "Sociales":
+                id_materia = 1;
+                break;
+            case "Matemáticas":
+                id_materia = 2;
+                break;
+            case "Español":
+                id_materia = 3;
+                break;
+            case "Programación":
+                id_materia = 4;
+                break;
+        }
         String query = "insert into students (Id, Nombre, Apellido, Materia, Nota) values (" + idField.getText() + ",'" + nombreField.getText() + "','" + apellidoField.getText() + "','" + materiaField.getText() + "'," + notaField.getText() + ")";
         executeQuery(query);
         showstudents();
+
+
 
     }
 
@@ -100,6 +119,11 @@ public class MainController implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         showstudents();
+        ObservableList<materias> list = getMateriasList();
+        for (materias listado: list){
+            listarMaterias.getItems().add(listado.getNombre());
+            System.out.println(listado);
+        }
     }
 
     public Connection getConnection() {
@@ -134,6 +158,28 @@ public class MainController implements Initializable {
         return studentsList;
     }
 
+    public ObservableList<materias> getMateriasList() {
+        ObservableList<materias> materiasList = FXCollections.observableArrayList();
+        Connection connection = getConnection();
+        String query = "SELECT * FROM materias";
+        Statement st;
+        ResultSet rs;
+
+        try {
+            st = connection.createStatement();
+            rs = st.executeQuery(query);
+            while (rs.next()) {
+                materias = new materias(rs.getInt("Id"), rs.getString("Nombre"));
+                materiasList.add(materias);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+//        System.out.println(materiasList);
+        return materiasList;
+
+    }
+
     // I had to change ArrayList to ObservableList I didn't find another option to do this but this works :)
     public void showstudents() {
         ObservableList<students> list = getStudentsList();
@@ -146,5 +192,13 @@ public class MainController implements Initializable {
 
         TableView.setItems(list);
     }
+//    public void showMaterias() {
+//        ObservableList<materias> list = getMateriasList();
+//
+//        idColumn.setCellValueFactory(new PropertyValueFactory<materias, Integer>("id"));
+//        nombreColumn.setCellValueFactory(new PropertyValueFactory<materias, String>("nombre"));
+//
+//        TableView.setItems(materias);
+//    }
 
 }

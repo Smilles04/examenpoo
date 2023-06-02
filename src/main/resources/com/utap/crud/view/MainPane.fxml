@@ -55,8 +55,9 @@
                 <TextField fx:id="idField" />
                 <TextField fx:id="nombreField" />
                 <TextField fx:id="apellidoField" />
-            <ComboBox prefWidth="150.0" />
-                <TextField fx:id="notaField1" layoutX="10.0" layoutY="150.0" prefHeight="4.0" prefWidth="127.0" />
+            <ComboBox fx:id="listarMaterias" layoutX="10.0" layoutY="150.0" onAction="#getMateriasList" prefWidth="150.0" />
+                <TextField fx:id="materiaField" layoutX="10.0" layoutY="150.0" prefHeight="4.0" prefWidth="127.0" />
+                <TextField fx:id="notaField" layoutX="10.0" layoutY="150.0" prefHeight="4.0" prefWidth="127.0" />
                 <TextField fx:id="notaField11" layoutX="10.0" layoutY="185.0" prefHeight="4.0" prefWidth="127.0" />
                 <TextField fx:id="notaField111" layoutX="10.0" layoutY="220.0" prefHeight="4.0" prefWidth="127.0" />
 
@@ -66,13 +67,13 @@
         <TableView fx:id="TableView" layoutX="238.0" layoutY="22.0" prefHeight="218.0" prefWidth="518.0">
             <columns>
                 <TableColumn fx:id="idColumn" prefWidth="35.0" text="ID" />
-                <TableColumn fx:id="NombreColumn" prefWidth="120.0" text="Nombre" />
-                <TableColumn fx:id="ApellidoColumn" prefWidth="120.0" text="Apellido" />
-                <TableColumn fx:id="MateriaColumn" prefWidth="60.0" text="Materia" />
-                <TableColumn fx:id="NotaColumn" prefWidth="60.0" text="Nota1" />
-                <TableColumn fx:id="NotaColumn1" prefWidth="60.0" text="Nota2" />
-                <TableColumn fx:id="NotaColumn11" prefWidth="60.0" text="Nota3" />
-                <TableColumn fx:id="NotaColumn111" prefWidth="60.0" text="Notaf" />
+                <TableColumn fx:id="nombreColumn" prefWidth="120.0" text="Nombre" />
+                <TableColumn fx:id="apellidoColumn" prefWidth="120.0" text="Apellido" />
+                <TableColumn fx:id="materiaColumn" prefWidth="60.0" text="Materia" />
+                <TableColumn fx:id="notaColumn" prefWidth="60.0" text="Nota1" />
+                <TableColumn fx:id="notaColumn1" prefWidth="60.0" text="Nota2" />
+                <TableColumn fx:id="notaColumn11" prefWidth="60.0" text="Nota3" />
+                <TableColumn fx:id="notaColumn111" prefWidth="60.0" text="Notaf" />
             </columns>
         </TableView>
         <Button fx:id="insertButton" layoutX="23.0" layoutY="333.0" mnemonicParsing="false" onAction="#insertButton" prefHeight="30.0" prefWidth="60.0" text="Insert" />
