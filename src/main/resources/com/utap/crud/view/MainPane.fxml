@@ -4,9 +4,9 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="406.0" prefWidth="876.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.utap.controller.MainController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="406.0" prefWidth="760.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.utap.controller.MainController">
     <children>
-        <VBox layoutX="15.0" layoutY="22.0" prefHeight="297.0" prefWidth="71.0" spacing="15.0">
+        <VBox layoutX="14.0" layoutY="22.0" prefHeight="297.0" prefWidth="71.0" spacing="15.0">
             <children>
                 <Label text="ID">
                     <font>
@@ -23,31 +23,31 @@
                         <Font size="14.0" />
                     </font>
                 </Label>
-                <Label text="id materia">
-                    <font>
-                        <Font size="14.0" />
-                    </font>
-                </Label>
                 <Label prefHeight="19.0" prefWidth="53.0" text="Materia">
                     <font>
                         <Font size="14.0" />
                     </font>
                 </Label>
-            <Label layoutX="10.0" layoutY="142.0" prefHeight="10.0" prefWidth="33.0" text="nota1">
-               <font>
-                  <Font size="14.0" />
-               </font>
-            </Label>
-            <Label layoutX="10.0" layoutY="175.0" prefHeight="17.0" prefWidth="40.0" text="nota2">
-               <font>
-                  <Font size="14.0" />
-               </font>
-            </Label>
-            <Label layoutX="10.0" layoutY="208.0" prefHeight="18.0" prefWidth="40.0" text="nota3">
-               <font>
-                  <Font size="14.0" />
-               </font>
-            </Label>
+                <Label layoutX="10.0" layoutY="142.0" prefHeight="10.0" prefWidth="33.0" text="nota1">
+                    <font>
+                        <Font size="14.0" />
+                    </font>
+                </Label>
+                <Label layoutX="10.0" layoutY="175.0" prefHeight="17.0" prefWidth="40.0" text="nota2">
+                    <font>
+                        <Font size="14.0" />
+                    </font>
+                </Label>
+                <Label layoutX="10.0" layoutY="208.0" prefHeight="18.0" prefWidth="40.0" text="nota3">
+                    <font>
+                        <Font size="14.0" />
+                    </font>
+                </Label>
+                <Label>
+                    <font>
+                        <Font size="14.0" />
+                    </font>
+                </Label>
             </children>
         </VBox>
         <VBox layoutX="87.0" layoutY="22.0" prefHeight="297.0" prefWidth="123.0" spacing="10.0">
@@ -55,30 +55,28 @@
                 <TextField fx:id="idField" />
                 <TextField fx:id="nombreField" />
                 <TextField fx:id="apellidoField" />
-                <TextField fx:id="materiaField" />
             <ComboBox prefWidth="150.0" />
-                <TextField fx:id="notaField" prefHeight="4.0" prefWidth="127.0" />
-            <TextField fx:id="notaField1" layoutX="10.0" layoutY="150.0" prefHeight="4.0" prefWidth="127.0" />
-            <TextField fx:id="notaField11" layoutX="10.0" layoutY="185.0" prefHeight="4.0" prefWidth="127.0" />
-            <TextField fx:id="notaField111" layoutX="10.0" layoutY="220.0" prefHeight="4.0" prefWidth="127.0" />
+                <TextField fx:id="notaField1" layoutX="10.0" layoutY="150.0" prefHeight="4.0" prefWidth="127.0" />
+                <TextField fx:id="notaField11" layoutX="10.0" layoutY="185.0" prefHeight="4.0" prefWidth="127.0" />
+                <TextField fx:id="notaField111" layoutX="10.0" layoutY="220.0" prefHeight="4.0" prefWidth="127.0" />
 
             </children>
         </VBox>
         <HBox layoutX="26.0" layoutY="202.0" spacing="10.0" />
-        <TableView fx:id="TableView" layoutX="238.0" layoutY="22.0" prefHeight="218.0" prefWidth="630.0">
+        <TableView fx:id="TableView" layoutX="238.0" layoutY="22.0" prefHeight="218.0" prefWidth="518.0">
             <columns>
                 <TableColumn fx:id="idColumn" prefWidth="35.0" text="ID" />
                 <TableColumn fx:id="NombreColumn" prefWidth="120.0" text="Nombre" />
                 <TableColumn fx:id="ApellidoColumn" prefWidth="120.0" text="Apellido" />
                 <TableColumn fx:id="MateriaColumn" prefWidth="60.0" text="Materia" />
                 <TableColumn fx:id="NotaColumn" prefWidth="60.0" text="Nota1" />
-            <TableColumn fx:id="NotaColumn1" prefWidth="60.0" text="Nota2" />
-            <TableColumn fx:id="NotaColumn11" prefWidth="60.0" text="Nota3" />
-            <TableColumn fx:id="NotaColumn111" prefWidth="60.0" text="Notaf" />
+                <TableColumn fx:id="NotaColumn1" prefWidth="60.0" text="Nota2" />
+                <TableColumn fx:id="NotaColumn11" prefWidth="60.0" text="Nota3" />
+                <TableColumn fx:id="NotaColumn111" prefWidth="60.0" text="Notaf" />
             </columns>
         </TableView>
-          <Button fx:id="insertButton" layoutX="23.0" layoutY="333.0" mnemonicParsing="false" onAction="#insertButton" prefHeight="30.0" prefWidth="60.0" text="Insert" />
-          <Button fx:id="updateButton" layoutX="87.0" layoutY="333.0" mnemonicParsing="false" onAction="#updateButton" prefHeight="30.0" prefWidth="60.0" text="Update" />
-          <Button fx:id="deleteButton" layoutX="149.0" layoutY="333.0" mnemonicParsing="false" onAction="#deleteButton" prefHeight="30.0" prefWidth="60.0" text="Delete" />
+        <Button fx:id="insertButton" layoutX="23.0" layoutY="333.0" mnemonicParsing="false" onAction="#insertButton" prefHeight="30.0" prefWidth="60.0" text="Insert" />
+        <Button fx:id="updateButton" layoutX="87.0" layoutY="333.0" mnemonicParsing="false" onAction="#updateButton" prefHeight="30.0" prefWidth="60.0" text="Update" />
+        <Button fx:id="deleteButton" layoutX="149.0" layoutY="333.0" mnemonicParsing="false" onAction="#deleteButton" prefHeight="30.0" prefWidth="60.0" text="Delete" />
     </children>
 </AnchorPane>

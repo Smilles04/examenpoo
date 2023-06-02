@@ -67,7 +67,6 @@ public class MainController implements Initializable {
     private void insertButton() {
         String query = "insert into students (Id, Nombre, Apellido, Materia, Nota) values (" + idField.getText() + ",'" + nombreField.getText() + "','" + apellidoField.getText() + "','" + materiaField.getText() + "'," + notaField.getText() + ")";
         executeQuery(query);
-        String query2 = "insert into materias (Id, Nombre)"
         showstudents();
 
     }
